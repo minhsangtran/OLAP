@@ -1,0 +1,211 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3dd98431-979e-46c5-8efb-b4b85a51e8b5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Earthquake</ID>
+  <Name>Earthquake</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Earthquake</DataSourceID>
+  <Schema>
+    <xs:schema id="Earthquake" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Earthquake" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="588cd6d0-02aa-4b67-b9e3-22be68cdde15">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_FACT" msprop:design-time-name="826e3eef-269e-4d93-a299-3f725fc12f73" msprop:DbTableName="FACT" msprop:FriendlyName="FACT" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:design-time-name="638de068-fa7e-48db-a83d-5c1e6e28615b" msprop:DbColumnName="id" msprop:FriendlyName="id" type="xs:int" />
+                  <xs:element name="earthquake_date" msprop:design-time-name="0d547bc1-f3c2-4958-b7a6-1676fb71cb46" msprop:DbColumnName="earthquake_date" msprop:FriendlyName="earthquake_date" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="lat_long" msprop:design-time-name="b7a76c83-b396-4d69-a323-7718bef41f16" msprop:DbColumnName="lat_long" msprop:FriendlyName="lat_long" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="city" msprop:design-time-name="1817e6ef-72f9-4996-9e68-94cbc4bd350d" msprop:DbColumnName="city" msprop:FriendlyName="city" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="area" msprop:design-time-name="f44585b6-46d5-4da7-9313-0a6ac0f02931" msprop:DbColumnName="area" msprop:FriendlyName="area" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direction" msprop:design-time-name="a2142c4d-5562-4292-a1ac-7b4ff2c44f44" msprop:DbColumnName="direction" msprop:FriendlyName="direction" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="dist" msprop:design-time-name="28f0a135-f1cd-42a0-8b7e-52f6fed35313" msprop:DbColumnName="dist" msprop:FriendlyName="dist" type="xs:double" minOccurs="0" />
+                  <xs:element name="depth" msprop:design-time-name="73b0d02f-9a13-4104-9231-aa5f64394901" msprop:DbColumnName="depth" msprop:FriendlyName="depth" type="xs:double" minOccurs="0" />
+                  <xs:element name="xm" msprop:design-time-name="3ef6d257-d3b1-429d-a331-be8426505f90" msprop:DbColumnName="xm" msprop:FriendlyName="xm" type="xs:double" minOccurs="0" />
+                  <xs:element name="md" msprop:design-time-name="7cace566-3928-4fd4-936e-0e2377ae4d22" msprop:DbColumnName="md" msprop:FriendlyName="md" type="xs:double" minOccurs="0" />
+                  <xs:element name="richter" msprop:design-time-name="385c4456-4cd5-4419-bc19-aa097e7b7b35" msprop:DbColumnName="richter" msprop:FriendlyName="richter" type="xs:double" minOccurs="0" />
+                  <xs:element name="mw" msprop:design-time-name="a1534e11-9406-4420-94c3-10f4e71568c3" msprop:DbColumnName="mw" msprop:FriendlyName="mw" type="xs:double" minOccurs="0" />
+                  <xs:element name="ms" msprop:design-time-name="0e66ac39-a384-448e-9433-d722174c86c4" msprop:DbColumnName="ms" msprop:FriendlyName="ms" type="xs:double" minOccurs="0" />
+                  <xs:element name="mb" msprop:design-time-name="6d167c6a-3c84-4ca0-abce-52e856b69afe" msprop:DbColumnName="mb" msprop:FriendlyName="mb" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Area" msprop:design-time-name="5a661f46-67f8-4698-83e6-c563565093c0" msprop:DbTableName="Dim_Area" msprop:FriendlyName="Dim_Area" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="area" msprop:design-time-name="f7f74fc4-f437-4d1c-86e8-0c95014e14b1" msprop:DbColumnName="area" msprop:FriendlyName="area">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_City" msprop:design-time-name="ca53146d-fb0d-4047-bb6d-b8cefe5a23f9" msprop:DbTableName="Dim_City" msprop:FriendlyName="Dim_City" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="city" msprop:design-time-name="6c6ba5a7-2024-4550-92ce-d9246671edaa" msprop:DbColumnName="city" msprop:FriendlyName="city">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Latlong" msprop:design-time-name="f2f1391f-0457-462d-ab3c-f9c02984a2c8" msprop:DbTableName="Dim_Latlong" msprop:FriendlyName="Dim_Latlong" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="lat_long" msprop:design-time-name="6b2894d1-ae16-404f-a123-9eb11250319f" msprop:DbColumnName="lat_long" msprop:FriendlyName="lat_long">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="lat" msprop:design-time-name="ac4317c9-5478-445c-b94e-4f72c930cc68" msprop:DbColumnName="lat" msprop:FriendlyName="lat" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="long" msprop:design-time-name="1b7ab990-dd37-446e-bdbb-9f66488c1c35" msprop:DbColumnName="long" msprop:FriendlyName="long" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Direction" msprop:design-time-name="82b9d5b9-78a3-4129-8836-56e455b208cb" msprop:DbTableName="Dim_Direction" msprop:FriendlyName="Dim_Direction" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="direction" msprop:design-time-name="74907be3-9e7c-4aa9-9afb-8911baa64556" msprop:DbColumnName="direction" msprop:FriendlyName="direction">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Time" msprop:design-time-name="f69f9b85-013c-4f22-9bef-0617ca744df3" msprop:DbTableName="Dim_Time" msprop:FriendlyName="Dim_Time" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="earthquake_date" msprop:design-time-name="5a6c05b1-3b28-487b-ae5a-4b33ee336b8e" msprop:DbColumnName="earthquake_date" msprop:FriendlyName="earthquake_date" type="xs:dateTime" />
+                  <xs:element name="earthquake_month" msprop:design-time-name="1ad22647-5645-42cc-b6a8-16ed5ab13224" msprop:DbColumnName="earthquake_month" msprop:FriendlyName="earthquake_month" type="xs:int" minOccurs="0" />
+                  <xs:element name="earthquake_year" msprop:design-time-name="b9e4adc1-eecc-4585-b0d6-1ab7f6587d52" msprop:DbColumnName="earthquake_year" msprop:FriendlyName="earthquake_year" type="xs:int" minOccurs="0" />
+                  <xs:element name="earthquake_quarter" msprop:design-time-name="dd1b3d2f-97c6-4224-9ee7-a6844fe13304" msprop:DbColumnName="earthquake_quarter" msprop:FriendlyName="earthquake_quarter" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Area_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Area" />
+          <xs:field xpath="area" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_City_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_City" />
+          <xs:field xpath="city" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Latlong_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Latlong" />
+          <xs:field xpath="lat_long" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Direction_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Direction" />
+          <xs:field xpath="direction" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Time_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Time" />
+          <xs:field xpath="earthquake_date" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="FACT-Dim_Time" msdata:parent="dbo_Dim_Time" msdata:child="dbo_FACT" msdata:parentkey="earthquake_date" msdata:childkey="earthquake_date" />
+          <msdata:Relationship name="FACT-Dim_Latlong" msdata:parent="dbo_Dim_Latlong" msdata:child="dbo_FACT" msdata:parentkey="lat_long" msdata:childkey="lat_long" />
+          <msdata:Relationship name="FACT-Dim_City" msdata:parent="dbo_Dim_City" msdata:child="dbo_FACT" msdata:parentkey="city" msdata:childkey="city" />
+          <msdata:Relationship name="FACT-Dim_Area" msdata:parent="dbo_Dim_Area" msdata:child="dbo_FACT" msdata:parentkey="area" msdata:childkey="area" />
+          <msdata:Relationship name="FACT-Dim_Direction" msdata:parent="dbo_Dim_Direction" msdata:child="dbo_FACT" msdata:parentkey="direction" msdata:childkey="direction" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Earthquake xmlns="" />
+  </Schema>
+</DataSourceView>

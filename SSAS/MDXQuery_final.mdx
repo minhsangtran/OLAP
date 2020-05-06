@@ -1,0 +1,117 @@
+﻿/*1.Độ richter lớn nhất ở mỗi area*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim Area].[Area].[Area].MEMBERS} ON ROWS
+FROM [Earthquake]
+
+/*2.Độ richter lớn nhất ở mỗi city*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim City].[City].[City].MEMBERS} ON ROWS
+FROM [Earthquake]
+
+/*3.Độ richter lớn nhất ở mỗi direction*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim Direction].[Direction].[Direction].MEMBERS} ON ROWS
+FROM [Earthquake]
+
+/*4.Độ richter lớn nhất ở mỗi tháng*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim Time].[Earthquake Month].[Earthquake Month].MEMBERS} ON ROWS
+FROM [Earthquake]
+
+/*5.Độ richter lớn nhất ở mỗi quý*/
+SELECT NON EMPTY{[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY{[Dim Time].[Earthquake Quarter].[Earthquake Quarter].MEMBERS} ON ROWS
+FROM [Earthquake]
+
+/*6.Độ richter lớn nhất ở mỗi năm*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim Time].[Earthquake Year].CHILDREN} ON ROWS
+FROM [Earthquake]
+
+
+/*7. Độ richter lớn nhất theo từng tháng 1 và 2*/
+SELECT NON EMPTY {[Measures].[Richter]} ON COLUMNS,
+       NON EMPTY {[Dim Time].[Earthquake Month].[1], [Dim Time].[Earthquake Month].[2]} ON ROWS
+FROM [Earthquake]
+
+
+
+
+/*8.Chọn ra những năm có độ richter cao nhất đạt ngưỡng 6 */
+SELECT NON EMPTY {[Dim Time].[Earthquake Year].[Earthquake Year].MEMBERS}
+HAVING [Measures].[Richter] >= 6 ON ROWS,
+         {[Measures].[Richter]} ON COLUMNS
+FROM [Earthquake]
+
+
+/*9.Chọn ra những năm có độ richter cao nhất đạt ngưỡng 6 */
+SELECT NONEMPTY (Filter({[Dim Time].[Earthquake Year].[Earthquake Year].MEMBERS},
+                 [Measures].[Richter] >= 6)) ON ROWS,
+         [Measures].[Richter] ON COLUMNS
+FROM [Earthquake]
+
+
+
+
+
+ /*10.Liệt kê độ richter của những thành phố từ năm 2000 đến năm 2006*/
+ SELECT NON EMPTY [Measures].[Richter] ON COLUMNS,
+        NON EMPTY [Dim City].[City].CHILDREN ON ROWS
+FROM [Earthquake]
+WHERE [Dim Time].[Earthquake Year].&[2000]:[Dim Time].[Earthquake Year].&[2006]
+  
+ 
+/* 11.Thống kê số trận động đất theo direction và latlong của mỗi city vào năm 1992*/
+SELECT 
+	NONEMPTY( CROSSJOIN([Dim Direction].[Direction].CHILDREN,[Dim Latlong].[Lat Long].CHILDREN ) ) ON COLUMNS,
+	NONEMPTY( [Dim City].[City].CHILDREN) ON ROWS
+FROM [Earthquake]
+WHERE 
+	([Measures].[FACT Count],
+	[Dim Time].[Earthquake Year].&[1992])
+
+
+/* 12.Chọn ra 3 thành phố có độ richter cao nhất trong năm 2015*/
+SELECT [Measures].[Richter] ON COLUMNS,
+TOPCOUNT({[Dim City].[City].CHILDREN},3, [Measures].[Richter] ) ON ROWS
+FROM [Earthquake]
+WHERE {[Dim Time].[Earthquake Year].&[2014]}
+
+--cach 2
+SELECT [Measures].[Richter] ON COLUMNS,
+	HEAD(
+		ORDER (
+			{[Dim City].[City].CHILDREN},
+			[Measures].[Richter], DESC),3
+			) ON ROWS
+FROM [Earthquake]
+WHERE 
+[Dim Time].[Earthquake Year].&[2014]
+/*13.Thống kê 3 tháng có tần suất động đất nhiều nhất trong năm 1990*/
+SELECT [Measures].[FACT Count] ON COLUMNS,
+	HEAD(
+		ORDER (
+			{[Dim Time].[Earthquake Month].CHILDREN},
+			[Measures].[FACT Count], DESC),3
+			) ON ROWS
+FROM [Earthquake]
+WHERE 
+[Dim Time].[Earthquake Year].&[1990]
+
+/*14.Thống kê 3 năm có tần số động đất nhiều nhất*/
+SELECT [Measures].[FACT Count] ON COLUMNS,
+	HEAD(
+		ORDER (
+			{[Dim Time].[Earthquake Year].CHILDREN},
+			[Measures].[FACT Count], DESC),3
+			) ON ROWS
+FROM [Earthquake]
+
+/*15. Thống kê số trận động đất theo thành phố và area tương ứng trong năm 2015*/
+SELECT 
+	NONEMPTY( CROSSJOIN([Dim City].[City].CHILDREN,[Dim Area].[Area].CHILDREN ) ) ON COLUMNS
+	
+FROM [Earthquake]
+WHERE 
+	([Measures].[FACT Count],
+	[Dim Time].[Earthquake Year].&[2015])

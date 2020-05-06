@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS_Earthquake", "SSAS_Earthquake\SSAS_Earthquake.dwproj", "{6D86E562-CF7B-40E7-AF29-0A1683C57A39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D86E562-CF7B-40E7-AF29-0A1683C57A39}.Development|Default.ActiveCfg = Development
+		{6D86E562-CF7B-40E7-AF29-0A1683C57A39}.Development|Default.Build.0 = Development
+		{6D86E562-CF7B-40E7-AF29-0A1683C57A39}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB81FE4E-11AF-4D4D-BF23-935DC4EF024A}
+	EndGlobalSection
+EndGlobal
